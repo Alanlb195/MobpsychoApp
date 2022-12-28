@@ -1,0 +1,37 @@
+<div class="container-fluid" style="background: url('assets/img/background.jpg'); height: 100%;">
+
+  <div class="row">
+    <div class="col-12 login-container">
+      
+      <mat-card [formGroup]="loginUser" (ngSubmit)="login()">
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-subtitle>Mobsycho Shop</mat-card-subtitle>
+  
+        <mat-card-content class="row">
+  
+          <mat-form-field class="col-12">
+            <input formControlName='email' type="email" matInput placeholder="Email">
+          </mat-form-field>
+  
+  
+          <mat-form-field class="col-12">
+            <input formControlName='password' type="password" matInput placeholder="Password">
+          </mat-form-field>
+  
+  
+          <div>
+            <button color="primary" (click)="login()" mat-raised-button [disabled]="!loginUser.valid"
+              type="submit">
+              <mat-icon>login</mat-icon>
+              Login</button>
+          </div>
+  
+        </mat-card-content>
+  
+      </mat-card>
+  
+    </div>
+  </div>
+
+
+</div>

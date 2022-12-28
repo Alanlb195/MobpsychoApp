@@ -1,0 +1,16 @@
+mat-card {
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.login-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-icon {
+    margin-right: 7px;
+}

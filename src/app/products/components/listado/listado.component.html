@@ -1,0 +1,12 @@
+<div class="row">
+    <div *ngFor="let c of character" class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4 cards-container">
+        <div (click)="details(c.idCharacter)" class="card text-center text-bg-dark mb-3">
+            <img [src]="c.urlImg" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{c.name}}</h5>
+                <p class="card-text">Edad: {{c.age}} años</p>
+                <p>Fecha de Nacimiento: {{ c.birthDate | date }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <!-- *ngIf="sidenav.mode === 'over'" -->
+        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+
+        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+
+    <span>Mobpsycho App</span>
+
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="">
+
+        <img class=""
+            src="https://imgs.search.brave.com/hqZVU8e4UunVxXuOOupjBWB-DljiE5s6JLMU9lCXjIo/rs:fit:593:594:1/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzdkLzc5/LzI5LzdkNzkyOTg1/NmQ4YjBlYjIwMmJl/N2I4YjBmY2Q2OWNh/LmpwZw" />
+
+        <h3 *ngIf="currentUser" class="name pt-3">{{currentUser.email}}</h3>
+
+        
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" *ngFor="let option of mainOptions" [routerLink]="option.router">
+            <mat-icon>{{option.icon}}</mat-icon>
+            <span class="fw-normal">{{ option.name }}</span>
+        </button>
+        <mat-divider></mat-divider>
+
+
+        <button color="primary" mat-raised-button class="mt-3" (click)="cerrarSesion()">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesión</span>
+        </button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <main class="main__content ">
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
