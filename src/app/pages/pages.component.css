@@ -3,8 +3,8 @@ mat-sidenav {
     padding: 50px;
 }
 
-mat-icon {
-    margin-right: 7px;
+.mr-3 {
+    margin-right: 5px;
 }
 
 .menu-button {
