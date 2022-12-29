@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     })
 
-    // if (authService.userData) {
-    //   router.navigate(['home'])
-    // }
+    if (authService.userData) {
+      router.navigate(['home'])
+    }
   }
   loginUser: FormGroup;
 

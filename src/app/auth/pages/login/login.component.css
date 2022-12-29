@@ -4,11 +4,13 @@ mat-card {
     padding: 50px 20px;
 }
 
-.login-container {
+.container-fluid {
+    height: 100vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    background: url('/assets/img/background.jpg');
 }
 
 mat-icon {
