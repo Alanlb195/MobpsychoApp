@@ -17,11 +17,11 @@ export class ListadoComponent implements OnInit {
     private router: Router
   ) { }
 
-  character: Character[] = [];
+  characters: Character[] = [];
 
   ngOnInit(): void {
-    this.characterService.getCharacters().subscribe((respose: IResponseApi) => {
-      this.character = respose.data;
+    this.characterService.getCharacters().subscribe((respose: Character[]) => {
+        this.characters = respose;
     })
   }
 
