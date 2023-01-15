@@ -45,7 +45,8 @@ export class PagesComponent {
 
   public cerrarSesion(): void {
     localStorage.removeItem('user');
-    this.router.navigate(['login']);
+    location.reload();
+    // this.router.navigate(['login']);
   }
 
 
