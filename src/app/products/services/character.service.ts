@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { IResponseApi } from 'src/app/core/interfaces/IResponseApi';
+import { Character, CharacterWithAbilities } from '../interfaces/character.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,12 @@ export class CharacterService {
 
   url = environment.baseUrl + '/characters/';
 
-  public getCharacters(): Observable<IResponseApi> {
-    return this.http.get<IResponseApi>(this.url);
+  public getCharacters(): Observable<Character[]> {
+    return this.http.get<Character[]>(this.url);
   }
 
-  public getCharacter(idCharacter: number): Observable<IResponseApi> {
-    return this.http.get<IResponseApi>(this.url + idCharacter);
+  public getCharacter(idCharacter: number): Observable<CharacterWithAbilities> {
+    return this.http.get<CharacterWithAbilities>(this.url + idCharacter);
   }
 
 }
