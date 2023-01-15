@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { CharacterService } from '../../services/character.service';
 import { SnackbarService } from '../../../shared/services/snackbar.service';
-import { IResponseApi } from '../../../core/interfaces/IResponseApi';
 import { Abilitie } from '../../interfaces/abilitie.interface';
+import { Character, CharacterWithAbilities } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'app-details',
@@ -20,8 +20,7 @@ export class DetailsComponent implements OnInit {
     this.contador = 0;
   }
 
-  character: any;
-  abilities: Abilitie[] = [];
+  CharacterWithAbilities!: CharacterWithAbilities;
 
   contador: number;
 
@@ -29,24 +28,18 @@ export class DetailsComponent implements OnInit {
 
     // Obtenemos el character específico
 
-    this._characterService.getCharacter(JSON.parse(this._activatedRoute.snapshot.params["personaje"])).subscribe((response: IResponseApi) => {
-      this.character = response.data;
-      this.abilities = response.data.abilitie;
+    this._characterService.getCharacter(JSON.parse(this._activatedRoute.snapshot.params["personaje"]))
+    .subscribe((response: CharacterWithAbilities) => {
+
+      this.CharacterWithAbilities = response;
+      console.log(this.CharacterWithAbilities);
+
     });
 
   }
 
-  addToCart() {
+  addItem() {
 
-  }
-
-
-  agregar() {
-    this.contador = this.contador + 1;
-  }
-
-  restar() {
-    this.contador = this.contador - 1;
   }
 
 }
